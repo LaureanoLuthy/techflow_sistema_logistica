@@ -47,3 +47,7 @@ Para alinhar as expectativas com a Startup de Logística, realizamos uma entrevi
 - [x] Criação de tarefas com ID e Destino.
 - [x] Sistema de priorização (Alta, Normal, Baixa).
 - [x] Armazenamento temporário em lista (CRUD básico).
+
+## 🔄 Mudança de Escopo card 10#
+Durante o desenvolvimento, identificamos a necessidade de destacar visualmente as cargas de prioridade "Alta". 
+**Alteração:** O sistema agora prefixa o destino com "⚠️ URGENTE" automaticamente para essas tarefas, conforme nova solicitação do stakeholder.
