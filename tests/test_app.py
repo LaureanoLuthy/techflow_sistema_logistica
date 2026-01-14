@@ -1,16 +1,19 @@
 import sys
 import os
-
-# Este bloco garante que o teste encontre o arquivo app.py dentro da pasta /src
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-from app import validar_prioridade, criar_tarefa
+from app import validar_prioridade, criar_tarefa, listar_tarefas
 
-def test_check_prioridade():
-    # Testa se a função aceita uma prioridade válida
-    assert validar_prioridade("Normal") is True
+def test_validacao_prioridade():
+    assert validar_prioridade("Alta") is True
+    assert validar_prioridade("Inexistente") is False
 
-def test_check_tarefa():
-    # Testa se a tarefa é criada com o status inicial correto
-    t = criar_tarefa(1, "Porto", "Normal")
-    assert t["status"] == "A Fazer"
+def test_fluxo_criacao_tarefa():
+    # Limpa a lista antes do teste
+    from app import banco_de_tarefas
+    banco_de_tarefas.clear()
+    
+    tarefa = criar_tarefa(1, "Porto de Santos", "Alta")
+    
+    assert tarefa["destino"] == "Porto de Santos"
+    assert len(listar_tarefas()) == 1
