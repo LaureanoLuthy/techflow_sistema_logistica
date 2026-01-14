@@ -42,3 +42,8 @@ Para alinhar as expectativas com a Startup de Logística, realizamos uma entrevi
 **9. Existe alguma restrição tecnológica?** R: O código deve ser versionado no GitHub e possuir testes automatizados para garantir a qualidade.
 
 **10. Qual a frequência de atualização do status das tarefas?** R: As atualizações devem ser imediatas assim que o status da operação mudar.
+
+### 🛠️ Funcionalidades Implementadas
+- [x] Criação de tarefas com ID e Destino.
+- [x] Sistema de priorização (Alta, Normal, Baixa).
+- [x] Armazenamento temporário em lista (CRUD básico).
