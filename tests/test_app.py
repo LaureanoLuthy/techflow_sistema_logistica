@@ -17,3 +17,8 @@ def test_fluxo_criacao_tarefa():
     
     assert tarefa["destino"] == "Porto de Santos"
     assert len(listar_tarefas()) == 1
+
+def test_mudanca_escopo_urgente():
+    # Testa se a tag URGENTE é adicionada corretamente
+    tarefa = criar_tarefa(99, "Cuiabá", "Alta")
+    assert "⚠️ URGENTE" in tarefa["destino"]

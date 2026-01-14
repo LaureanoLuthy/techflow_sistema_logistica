@@ -7,9 +7,13 @@ def validar_prioridade(prioridade):
     return prioridade in niveis_validos
 
 def criar_tarefa(id, destino, prioridade):
-    """Cria uma nova tarefa e a adiciona ao gerenciador."""
+    """Cria uma nova tarefa com a mudança de escopo: aviso de URGENTE."""
     if not validar_prioridade(prioridade):
-        prioridade = "Normal"  # Valor padrão de segurança
+        prioridade = "Normal"
+    
+    # MUDANÇA DE ESCOPO: Se for Alta, o sistema agora destaca o destino
+    if prioridade == "Alta":
+        destino = f"⚠️ URGENTE: {destino}"
     
     nova_tarefa = {
         "id": id,
